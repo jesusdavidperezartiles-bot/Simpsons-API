@@ -71,7 +71,18 @@ async function getPersonajes() {
     loadingMessage.hidden = true;
   }    
 }
+const pintarSinResultados = () => {
+  const container = document.querySelector('.characters');
 
+  container.innerHTML = `
+    <div class="no_results">
+      <h2>No se encontraron personajes con ese nombre</h2>
+      <p>Intenta con otro nombre.</p>
+    </div>
+  `;
+
+  document.getElementById('pagination').innerHTML = '';
+};
 const pintarCartas = (personajes) => {
   const container = document.querySelector('.characters');
   container.innerHTML = '';
